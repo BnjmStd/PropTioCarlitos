@@ -2,7 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 
 export default function DropdownInput({ options, onOptionSelect }) {
     const [isOpen, setIsOpen] = useState(false);
+
     const [inputValue, setInputValue] = useState('');
+    
     const dropdownRef = useRef(null);
 
     const handleOptionClick = (option) => {

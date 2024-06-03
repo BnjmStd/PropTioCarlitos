@@ -26,10 +26,10 @@ export default function Welcome() {
     }
 
     return (
-        <section className="max-w-screen-xl mx-auto py-16 grid justify-center">
-            <form className="flex flex-col gap-6 border bg-transparent border-gray-200 p-5 rounded-lg">
+        <section className="max-w-screen-xl mx-auto py-16 grid justify-center dark:text-white">
+            <form className="flex flex-col gap-6 border bg-transparent  border-gray-200 p-5 rounded-lg">
                 <div className="text-center">
-                    <h1 className="text-black text-bold text-5xl"> Propiedades Carlitos </h1>
+                    <h1 className="text-black text-bold text-5xl dark:text-white"> Propiedades Carlitos </h1>
                     <ul className="flex flex-row gap-5 pt-5">
                         {
                             typeProperty.map( (prop, index) => {
