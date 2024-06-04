@@ -1,5 +1,7 @@
-import { WhatsAppIcon } from "../../icons/Icons"
+import { WhatsAppIcon, WhatsAppIconTitle } from "../../icons/Icons"
 import { useState } from "react"
+import "./wsp.css"
+import { Link } from "react-router-dom";
 
 export default function Wsp() {
 
@@ -9,23 +11,36 @@ export default function Wsp() {
         setIsChatOpen(!isChatOpen)
     };
 
+    // , SendIcon <SendIcon />
     return (
         <>
-            <div 
-                className={`fixed z-10 bottom-6 right-6 bg-green-500 rounded-full p-3 text-white shadow-lg hover:bg-green-600 transition duration-300 cursor-pointer animation-chat`}
-                onClick={handleClick}
+            <div
+                className={`${isChatOpen ? 'click_class' : 'wsp-button '}`}
+                onClick={isChatOpen ? () => {} : handleClick}
             >
-                <WhatsAppIcon width={32} height={32} />
+                {isChatOpen ? (
+                    <Link to={'/'}>
+                        Abrir chat 
+                    </Link>
+                ) : (
+                    <WhatsAppIcon width={32} height={32} title={''} />
+                )}
             </div>
-            
+
             {isChatOpen && (
-                <div className="fixed bottom-6 right-6 w-96 h-80 bg-[#ECE5DD] shadow-lg rounded-lg p-4 animation-chatOpen">
-                    <label>
-                        <h2 className="text-lg font-bold mb-4"><WhatsAppIcon width={16} height={16}/>WhatsApp</h2>
+                <div className="chat-box">
+                    <label className="chat-label">
+                        <span className="chat-header">
+                            <WhatsAppIconTitle width={120} height={28} title={'WhatsApp'}/>
+                            <button className="button-close" onClick={handleClick}>✖️</button>
+                        </span>
                     </label>
-                    
-                    <div className="flex flex-col gap-2">
-                        <p>Hola! ¿En qué puedo ayudarte?</p>
+
+                    <div className="chat-content">
+                        <button 
+                            class="whatsapp-button">
+                                Somos Carlitos props 🏠,
+                        ¿Cómo podemos ayudarte?</button>
                     </div>
                 </div>
             )}

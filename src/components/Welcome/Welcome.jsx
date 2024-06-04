@@ -29,7 +29,8 @@ export default function Welcome() {
         <section className="max-w-screen-xl mx-auto py-16 grid justify-center dark:text-white">
             <form className="flex flex-col gap-6 border bg-transparent  border-gray-200 p-5 rounded-lg">
                 <div className="text-center">
-                    <h1 className="text-black text-bold text-5xl dark:text-white"> Propiedades Carlitos </h1>
+                    <h1 className="text-black text-bold text-5xl dark:text-white mb-10"> Propiedades Carlitos </h1>
+                    <span className="text-2xl text-bold mt-5 pt-5">¿Qué buscas?</span>
                     <ul className="flex flex-row gap-5 pt-5">
                         {
                             typeProperty.map( (prop, index) => {
